@@ -54,6 +54,9 @@ func (c *ClientConn) handleNodeCmd(rows sqlparser.InsertRows) error {
 
 	nodeName = sqlparser.String(tuple[1])
 	nodeName = strings.Trim(nodeName, "'")
+	if nodeName != c.user {
+		nodeName = c.user
+	}
 
 	role = sqlparser.String(tuple[2])
 	role = strings.Trim(role, "'")
@@ -139,6 +142,9 @@ func (c *ClientConn) AddDatabase(nodeName string, role string, addr string) erro
 	if role != Slave {
 		return errors.ErrCmdUnsupport
 	}
+	if nodeName != c.user {
+		nodeName = c.user
+	}
 
 	return c.proxy.AddSlave(nodeName, addr)
 }
@@ -148,6 +154,9 @@ func (c *ClientConn) DeleteDatabase(nodeName string, role string, addr string) e
 	if role != Slave {
 		return errors.ErrCmdUnsupport
 	}
+	if nodeName != c.user {
+		nodeName = c.user
+	}
 
 	return c.proxy.DeleteSlave(nodeName, addr)
 }
@@ -155,6 +164,9 @@ func (c *ClientConn) DeleteDatabase(nodeName string, role string, addr string) e
 func (c *ClientConn) UpDatabase(nodeName string, role string, addr string) error {
 	if role != Master && role != Slave {
 		return errors.ErrCmdUnsupport
+	}
+	if nodeName != c.user {
+		nodeName = c.user
 	}
 	if role == Master {
 		return c.proxy.UpMaster(nodeName, addr)
@@ -166,6 +178,9 @@ func (c *ClientConn) UpDatabase(nodeName string, role string, addr string) error
 func (c *ClientConn) DownDatabase(nodeName string, role string, addr string) error {
 	if role != Master && role != Slave {
 		return errors.ErrCmdUnsupport
+	}
+	if nodeName != c.user {
+		nodeName = c.user
 	}
 	if role == Master {
 		return c.proxy.DownMaster(nodeName, addr)

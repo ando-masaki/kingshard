@@ -99,6 +99,15 @@ func (s *Server) parseNodes() error {
 func (s *Server) parseSchemas() error {
 	s.schemas = make(map[string]*Schema)
 
+	if len(s.cfg.Schemas) == 0 {
+		s.schemas[""] = &Schema{
+			db:    "",
+			nodes: map[string]*backend.Node{},
+			rule:  &router.Router{},
+		}
+		return nil
+	}
+
 	if len(s.cfg.Schemas) != 1 {
 		return fmt.Errorf("must have only one schema.")
 	}
