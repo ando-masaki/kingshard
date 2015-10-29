@@ -1,7 +1,7 @@
 package backend
 
 import (
-	"github.com/flike/kingshard/config"
+	"github.com/ando-masaki/kingshard/config"
 	"testing"
 )
 

@@ -2,9 +2,9 @@ package router
 
 import (
 	"fmt"
-	"github.com/flike/kingshard/config"
-	"github.com/flike/kingshard/core/yaml"
-	"github.com/flike/kingshard/sqlparser"
+	"github.com/ando-masaki/kingshard/config"
+	"github.com/ando-masaki/kingshard/core/yaml"
+	"github.com/ando-masaki/kingshard/sqlparser"
 	"testing"
 )
 

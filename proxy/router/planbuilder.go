@@ -4,9 +4,9 @@ import (
 	"sort"
 	"strconv"
 
-	"github.com/flike/kingshard/core/errors"
-	"github.com/flike/kingshard/core/golog"
-	"github.com/flike/kingshard/sqlparser"
+	"github.com/ando-masaki/kingshard/core/errors"
+	"github.com/ando-masaki/kingshard/core/golog"
+	"github.com/ando-masaki/kingshard/sqlparser"
 )
 
 const (

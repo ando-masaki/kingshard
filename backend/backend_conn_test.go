@@ -2,7 +2,7 @@ package backend
 
 import (
 	"fmt"
-	. "github.com/flike/kingshard/mysql"
+	. "github.com/ando-masaki/kingshard/mysql"
 	"testing"
 )
 

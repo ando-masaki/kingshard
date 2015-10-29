@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/flike/kingshard.svg?branch=master)](https://travis-ci.org/flike/kingshard)
+[![Build Status](https://travis-ci.org/ando-masaki/kingshard.svg?branch=master)](https://travis-ci.org/ando-masaki/kingshard)
 
 # Overview
 kingshard is a high-performance proxy for MySQL powered by Go. Just like other mysql proxies, you can use it to split the read/write sqls. Now it supports basic SQL statements (select, insert, update, replace, delete). The most important feature is the sharding function. Kingshard aims to simplify the sharding solution of MySQL.
@@ -19,8 +19,8 @@ kingshard is a high-performance proxy for MySQL powered by Go. Just like other m
 # Install
 ```
   1. Install Go
-  2. git clone https://github.com/flike/kingshard.git src/github.com/flike/kingshard
-  3. cd src/github.com/flike/kingshard
+  2. git clone https://github.com/ando-masaki/kingshard.git src/github.com/ando-masaki/kingshard
+  3. cd src/github.com/ando-masaki/kingshard
   4. source ./dev.sh
   5. make
   6. set the config file (etc/multi.yaml)

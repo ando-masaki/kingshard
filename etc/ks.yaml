@@ -7,7 +7,7 @@ password : kingshard
 
 #if set log_path, the sql log will write into log_path/sql.log,the system log
 #will write into log_path/sys.log
-#log_path : /Users/flike/log
+#log_path : /Users/ando-masaki/log
 
 # log level[debug|info|warn|error],default error
 log_level : debug

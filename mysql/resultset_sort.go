@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/flike/kingshard/core/hack"
+	"github.com/ando-masaki/kingshard/core/hack"
 )
 
 const (

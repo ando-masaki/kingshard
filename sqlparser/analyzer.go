@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/flike/kingshard/sqltypes"
+	"github.com/ando-masaki/kingshard/sqltypes"
 )
 
 // GetDBName parses the specified DML and returns the

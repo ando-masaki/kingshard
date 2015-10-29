@@ -2,7 +2,7 @@ package server
 
 import (
 	"fmt"
-	"github.com/flike/kingshard/sqlparser"
+	"github.com/ando-masaki/kingshard/sqlparser"
 )
 
 func (c *ClientConn) handleUseDB(stmt *sqlparser.UseDB) error {

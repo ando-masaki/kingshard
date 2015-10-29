@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/flike/kingshard/core/golog"
-	"github.com/flike/kingshard/mysql"
-	"github.com/flike/kingshard/sqlparser"
+	"github.com/ando-masaki/kingshard/core/golog"
+	"github.com/ando-masaki/kingshard/mysql"
+	"github.com/ando-masaki/kingshard/sqlparser"
 )
 
 var nstring = sqlparser.String

@@ -13,7 +13,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/flike/kingshard/core/hack"
+	"github.com/ando-masaki/kingshard/core/hack"
 )
 
 var (

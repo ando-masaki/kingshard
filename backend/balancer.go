@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/flike/kingshard/core/errors"
+	"github.com/ando-masaki/kingshard/core/errors"
 )
 
 func Gcd(ary []int) int {

@@ -6,7 +6,7 @@ package router
 
 import (
 	"fmt"
-	"github.com/flike/kingshard/core/hack"
+	"github.com/ando-masaki/kingshard/core/hack"
 	"hash/crc32"
 	"strconv"
 )

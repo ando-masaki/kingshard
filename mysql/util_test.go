@@ -2,7 +2,7 @@ package mysql
 
 import (
 	"encoding/hex"
-	"github.com/flike/kingshard/core/hack"
+	"github.com/ando-masaki/kingshard/core/hack"
 	"testing"
 )
 

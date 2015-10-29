@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/flike/kingshard/mysql"
+	"github.com/ando-masaki/kingshard/mysql"
 )
 
 var (
