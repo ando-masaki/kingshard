@@ -33,7 +33,7 @@ log_level : debug
 # 打开SQL日志，设置为on;关闭SQL日志，设置为off
 log_sql : on
 #日志文件路径，如果不配置则会输出到终端。
-log_path : /Users/flike/log
+log_path : /Users/ando-masaki/log
 # 只允许下面的IP列表连接kingshard，如果不配置则对连接kingshard的IP不做限制。
 allow_ips: 127.0.0.1
 
@@ -116,8 +116,8 @@ schemas :
 ### (2). 安装和启动kingshard
 
 1. 安装Go语言环境，具体步骤请Google。
-2. git clone https://github.com/flike/kingshard.git src/github.com/flike/kingshard
-3. cd src/github.com/flike/kingshard
+2. git clone https://github.com/ando-masaki/kingshard.git src/github.com/ando-masaki/kingshard
+3. cd src/github.com/ando-masaki/kingshard
 4. source ./dev.sh
 5. make
 6. 设置配置文件
@@ -148,7 +148,7 @@ CREATE TABLE `test_shard_hash_0000` (
 执行下面SQL语句，根据查询的结果可以看出SQL语句根据分表规则落到不同的子表。查询操作（select）可以跨多个node，当更新操作涉及到多个node时，kingshard会返回错误。为了保证数据一致性，kingshard不允许同时更新多个node上的子表（因为kingshard还未实现分布式事务）。但可以更新单个node上的多个子表，由单node上的事务保证。
 
 ```
-mysql> insert into test_shard_hash(id,str,f,e,u,i) values(15,"flike",3.14,'test2',2,3);
+mysql> insert into test_shard_hash(id,str,f,e,u,i) values(15,"ando-masaki",3.14,'test2',2,3);
 Query OK, 1 row affected (0.01 sec)
 
 mysql> mysql> insert into test_shard_hash(id,str,f,e,u,i) values(7,"chen",2.1,'test1',32,3);
@@ -163,7 +163,7 @@ Query OK, 1 row affected (0.01 sec)
 对应的SQL日志如下所示：
 
 ```
-2015/09/02 18:48:24 - INFO - 127.0.0.1:55003->192.168.59.103:3307:insert into test_shard_hash_0007(id, str, f, e, u, i) values (15, 'flike', 3.14, 'test2', 2, 3)
+2015/09/02 18:48:24 - INFO - 127.0.0.1:55003->192.168.59.103:3307:insert into test_shard_hash_0007(id, str, f, e, u, i) values (15, 'ando-masaki', 3.14, 'test2', 2, 3)
 2015/09/02 18:49:05 - INFO - 127.0.0.1:55003->192.168.59.103:3307:insert into test_shard_hash_0007(id, str, f, e, u, i) values (7, 'chen', 2.1, 'test1', 32, 3)
 2015/09/02 18:49:51 - INFO - 127.0.0.1:55003->127.0.0.1:3306:insert into test_shard_hash_0001(id, str, f, e, u, i) values (17, 'github', 2.5, 'test1', 32, 3)
 2015/09/02 18:50:21 - INFO - 127.0.0.1:55003->127.0.0.1:3306:insert into test_shard_hash_0002(id, str, f, e, u, i) values (18, 'kingshard', 7.3, 'test1', 32, 3)
@@ -179,7 +179,7 @@ mysql> select * from test_shard_hash where id < 18;
 +----+--------+------+-------+------+------+
 | 17 | github |  2.5 | test1 |   32 |    3 |
 |  7 | chen   |  2.1 | test1 |   32 |    3 |
-| 15 | flike  | 3.14 | test2 |    2 |    3 |
+| 15 | ando-masaki  | 3.14 | test2 |    2 |    3 |
 +----+--------+------+-------+------+------+
 3 rows in set (0.02 sec)
 ```
@@ -367,7 +367,7 @@ mysql> select * from test_shard_hash where id > 1 order by id;
 | id | str       | f    | e     | u    | i    |
 +----+-----------+------+-------+------+------+
 |  7 | chen      |  2.1 | test1 |  123 |    3 |
-| 15 | flike     | 3.14 | test2 |  123 |    3 |
+| 15 | ando-masaki     | 3.14 | test2 |  123 |    3 |
 | 17 | github    |  2.5 | test1 |   32 |   23 |
 | 18 | kingshard |  7.3 | test1 |   32 |   23 |
 +----+-----------+------+-------+------+------+
@@ -418,6 +418,6 @@ kingshard的管理接口，目前还是命令行的方式。后续有时间打�
 * `admin node(opt,node,k,v) values(action,nodeName,k1,v1)`,这类命令表示操作node。其中opt表示这个操作的动作；node表示操作哪个node；k表示操作的对象，v表示给对象的赋值。
 
 ## 7. 总结
-kingshard开源两个月以来，得到了很多开发者的关注。这足以证明，大家对数据库中间件是有需求的，希望出现一款简单好用的MySQL Proxy。kingshard经过这两个月的迭代开发，也比较稳定了。据了解，有几个公司正在对其进行尝试。后续作者的主要精力会放在优化kingshard的性能上，同时完善kingshard已有的功能。如果大家对kingshard有什么想法或建议，可以发邮件联系我（flikecn#126.com)，非常乐意和大家交流。
+kingshard开源两个月以来，得到了很多开发者的关注。这足以证明，大家对数据库中间件是有需求的，希望出现一款简单好用的MySQL Proxy。kingshard经过这两个月的迭代开发，也比较稳定了。据了解，有几个公司正在对其进行尝试。后续作者的主要精力会放在优化kingshard的性能上，同时完善kingshard已有的功能。如果大家对kingshard有什么想法或建议，可以发邮件联系我（ando-masakicn#126.com)，非常乐意和大家交流。
 
 

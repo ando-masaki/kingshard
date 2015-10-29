@@ -82,5 +82,5 @@ kingshard每个node启动了一个goroutine用于检测后端master和slave的�
 ## 8. 管理端设计和实现
 kingshard的管理端口复用了工作端口，通过特定的关键字(admin)来标示。kingshard是通过对管理端特定的SQL进行词法和语义分析，将SQL语句解析为一条kingshard可以识别的命令。目前支持平滑上下线master和slave，和查看kingshard配置和后端DB状态。后续打算将web页面集成到管理端，这样用户就可以不用输入命令行操作，而是在网页上操作。大大降低用户使用kingshard的门槛。
 
-上述各个模块都是kingshard中比较核心的模块，通过这篇文章的介绍，我想读者应该对kingshard的架构和实现有了初步的了解。很多功能的设计和实现，都是作者慢慢地摸索和实践。如果有读者对kingshard的设计或实现感兴趣或者对上述设计有不同的想法，欢迎发邮件（flikecn#126.com）给我。
+上述各个模块都是kingshard中比较核心的模块，通过这篇文章的介绍，我想读者应该对kingshard的架构和实现有了初步的了解。很多功能的设计和实现，都是作者慢慢地摸索和实践。如果有读者对kingshard的设计或实现感兴趣或者对上述设计有不同的想法，欢迎发邮件（ando-masakicn#126.com）给我。
 

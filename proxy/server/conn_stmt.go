@@ -7,10 +7,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/flike/kingshard/core/errors"
-	"github.com/flike/kingshard/core/golog"
-	"github.com/flike/kingshard/mysql"
-	"github.com/flike/kingshard/sqlparser"
+	"github.com/ando-masaki/kingshard/core/errors"
+	"github.com/ando-masaki/kingshard/core/golog"
+	"github.com/ando-masaki/kingshard/mysql"
+	"github.com/ando-masaki/kingshard/sqlparser"
 )
 
 var paramFieldData []byte

@@ -1,8 +1,8 @@
 ## 安装kingshard
 ```
 	1. 安装Go语言环境，具体步骤请Google。
-	2. git clone https://github.com/flike/kingshard.git src/github.com/flike/kingshard
-	3. cd src/github.com/flike/kingshard
+	2. git clone https://github.com/ando-masaki/kingshard.git src/github.com/ando-masaki/kingshard
+	3. cd src/github.com/ando-masaki/kingshard
 	4. source ./dev.sh
 	5. make
 	6. 设置配置文件
@@ -24,7 +24,7 @@ log_level : debug
 # 打开SQL日志，设置为on;关闭SQL日志，设置为off
 log_sql : on
 #日志文件路径，如果不配置则会输出到终端。
-log_path : /Users/flike/log
+log_path : /Users/ando-masaki/log
 # 只允许下面的IP列表连接kingshard，如果不配置则对连接kingshard的IP不做限制。
 allow_ips: 127.0.0.1
 

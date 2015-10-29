@@ -27,7 +27,7 @@ password : kingshard
 
 #if set log_path, the sql log will write into log_path/sql.log,the system log
 #will write into log_path/sys.log
-log_path : /Users/flike/log
+log_path : /Users/ando-masaki/log
 
 # log level[debug|info|warn|error],default error
 log_level : debug
@@ -116,8 +116,8 @@ schemas :
 
 ```
 1. Install Go
-2. git clone https://github.com/flike/kingshard.git src/github.com/flike/kingshard
-3. cd src/github.com/flike/kingshard
+2. git clone https://github.com/ando-masaki/kingshard.git src/github.com/ando-masaki/kingshard
+3. cd src/github.com/ando-masaki/kingshard
 4. source ./dev.sh
 5. make
 6. set the config file (etc/multi.yaml)
@@ -151,7 +151,7 @@ CREATE TABLE `test_shard_hash_0000` (
 The select SQLs will be sent to a proper database or multi databases based on the conditions. The insert SQLs will only be sent to one database, if the insert operation accoss multi databases, kingshard will response error messages, because kingshard does not implemente distributed transactions. The SQLs as below:
 
 ```
-mysql> insert into test_shard_hash(id,str,f,e,u,i) values(15,"flike",3.14,'test2',2,3);
+mysql> insert into test_shard_hash(id,str,f,e,u,i) values(15,"ando-masaki",3.14,'test2',2,3);
 Query OK, 1 row affected (0.01 sec)
 
 mysql> mysql> insert into test_shard_hash(id,str,f,e,u,i) values(7,"chen",2.1,'test1',32,3);
@@ -167,7 +167,7 @@ Query OK, 1 row affected (0.01 sec)
 And the corresponding SQLs log as below:
 
 ```
-2015/09/02 18:48:24 - INFO - 127.0.0.1:55003->192.168.59.103:3307:insert into test_shard_hash_0007(id, str, f, e, u, i) values (15, 'flike', 3.14, 'test2', 2, 3)
+2015/09/02 18:48:24 - INFO - 127.0.0.1:55003->192.168.59.103:3307:insert into test_shard_hash_0007(id, str, f, e, u, i) values (15, 'ando-masaki', 3.14, 'test2', 2, 3)
 2015/09/02 18:49:05 - INFO - 127.0.0.1:55003->192.168.59.103:3307:insert into test_shard_hash_0007(id, str, f, e, u, i) values (7, 'chen', 2.1, 'test1', 32, 3)
 2015/09/02 18:49:51 - INFO - 127.0.0.1:55003->127.0.0.1:3306:insert into test_shard_hash_0001(id, str, f, e, u, i) values (17, 'github', 2.5, 'test1', 32, 3)
 2015/09/02 18:50:21 - INFO - 127.0.0.1:55003->127.0.0.1:3306:insert into test_shard_hash_0002(id, str, f, e, u, i) values (18, 'kingshard', 7.3, 'test1', 32, 3)
@@ -184,7 +184,7 @@ mysql> select * from test_shard_hash where id < 18;
 +----+--------+------+-------+------+------+
 | 17 | github |  2.5 | test1 |   32 |    3 |
 |  7 | chen   |  2.1 | test1 |   32 |    3 |
-| 15 | flike  | 3.14 | test2 |    2 |    3 |
+| 15 | ando-masaki  | 3.14 | test2 |    2 |    3 |
 +----+--------+------+-------+------+------+
 3 rows in set (0.02 sec)
 ```
@@ -362,7 +362,7 @@ mysql> select * from test_shard_hash where id > 1 order by id;
 | id | str       | f    | e     | u    | i    |
 +----+-----------+------+-------+------+------+
 |  7 | chen      |  2.1 | test1 |  123 |    3 |
-| 15 | flike     | 3.14 | test2 |  123 |    3 |
+| 15 | ando-masaki     | 3.14 | test2 |  123 |    3 |
 | 17 | github    |  2.5 | test1 |   32 |   23 |
 | 18 | kingshard |  7.3 | test1 |   32 |   23 |
 +----+-----------+------+-------+------+------+
@@ -465,4 +465,4 @@ mysql> admin server(opt,k,v) values('show','schema','config');
 
 ## 6.Requirement and feedback
 
-If You have new functional requirements about kingshard in the production environment, or find a bug in the process of using kingshard. Welcome to send a mail to `flikecn#126.com`, I will reply you as soon as possible.
+If You have new functional requirements about kingshard in the production environment, or find a bug in the process of using kingshard. Welcome to send a mail to `ando-masakicn#126.com`, I will reply you as soon as possible.

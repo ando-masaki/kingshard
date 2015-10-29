@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/flike/kingshard.svg?branch=master)](https://travis-ci.org/flike/kingshard)
+[![Build Status](https://travis-ci.org/ando-masaki/kingshard.svg?branch=master)](https://travis-ci.org/ando-masaki/kingshard)
 
 # kingshard简介
 
@@ -44,7 +44,7 @@ kingshard采用MIT协议，相关协议请参看[目录](./doc/License)
 
 ## 鸣谢
 - 感谢[mixer](https://github.com/siddontang/mixer)作者siddontang, kingshard最初的版本正是基于mixer开发而来的。
-- 感谢以下[开源爱好者](https://github.com/flike/kingshard/graphs/contributors)为kingshard做出的贡献。
+- 感谢以下[开源爱好者](https://github.com/ando-masaki/kingshard/graphs/contributors)为kingshard做出的贡献。
 
 ## 反馈
-kingshard开源以来，经过不断地迭代开发，功能较为完善，稳定性有较大提升。 **目前已有2家公司在生产环境使用kingshard作为MySQL代理。** 如果您在使用kingshard的过程中发现BUG或者有新的功能需求，非常欢迎您发邮件至flikecn#126.com与作者取得联系，或者加入QQ群(147926796)交流。
+kingshard开源以来，经过不断地迭代开发，功能较为完善，稳定性有较大提升。 **目前已有2家公司在生产环境使用kingshard作为MySQL代理。** 如果您在使用kingshard的过程中发现BUG或者有新的功能需求，非常欢迎您发邮件至ando-masakicn#126.com与作者取得联系，或者加入QQ群(147926796)交流。

@@ -7,9 +7,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/flike/kingshard/config"
-	"github.com/flike/kingshard/core/errors"
-	"github.com/flike/kingshard/core/golog"
+	"github.com/ando-masaki/kingshard/config"
+	"github.com/ando-masaki/kingshard/core/errors"
+	"github.com/ando-masaki/kingshard/core/golog"
 )
 
 const (

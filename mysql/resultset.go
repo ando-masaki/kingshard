@@ -3,7 +3,7 @@ package mysql
 import (
 	"encoding/binary"
 	"fmt"
-	"github.com/flike/kingshard/core/hack"
+	"github.com/ando-masaki/kingshard/core/hack"
 	"math"
 	"strconv"
 )

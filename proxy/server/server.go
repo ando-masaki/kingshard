@@ -8,12 +8,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/flike/kingshard/mysql"
+	"github.com/ando-masaki/kingshard/mysql"
 
-	"github.com/flike/kingshard/backend"
-	"github.com/flike/kingshard/config"
-	"github.com/flike/kingshard/core/golog"
-	"github.com/flike/kingshard/proxy/router"
+	"github.com/ando-masaki/kingshard/backend"
+	"github.com/ando-masaki/kingshard/config"
+	"github.com/ando-masaki/kingshard/core/golog"
+	"github.com/ando-masaki/kingshard/proxy/router"
 )
 
 type Schema struct {

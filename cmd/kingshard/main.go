@@ -10,9 +10,9 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/flike/kingshard/config"
-	"github.com/flike/kingshard/core/golog"
-	"github.com/flike/kingshard/proxy/server"
+	"github.com/ando-masaki/kingshard/config"
+	"github.com/ando-masaki/kingshard/core/golog"
+	"github.com/ando-masaki/kingshard/proxy/server"
 )
 
 var configFile *string = flag.String("config", "/etc/kingshard.conf", "kingshard config file")

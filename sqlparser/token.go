@@ -9,7 +9,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/flike/kingshard/sqltypes"
+	"github.com/ando-masaki/kingshard/sqltypes"
 )
 
 const EOFCHAR = 0x100
