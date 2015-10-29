@@ -410,10 +410,6 @@ func (c *ClientConn) GetExecNode(tokens []string,
 	}
 
 	if execNode == nil {
-		defaultRule := c.schema.rule.DefaultRule
-		if len(defaultRule.Nodes) == 0 {
-			return nil, false, errors.ErrNoDefaultNode
-		}
 		execNode = c.proxy.GetNode(c.user)
 	}
 
