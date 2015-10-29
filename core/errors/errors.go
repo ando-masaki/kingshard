@@ -35,4 +35,6 @@ var (
 	ErrStmtConvert  = errors.New("statement fail to convert")
 	ErrExprConvert  = errors.New("expr fail to convert")
 	ErrConnNotEqual = errors.New("the length of conns not equal sqls")
+
+	ErrInvalidNode = errors.New("invalid node")
 )

@@ -135,11 +135,8 @@ func (c *ClientConn) getShardConns(fromSlave bool, plan *router.Plan) (map[strin
 		return nil, errors.ErrNoRouteNode
 	}
 
-	nodesCount := len(plan.RouteNodeIndexs)
-	nodes := make([]*backend.Node, 0, nodesCount)
-	for i := 0; i < nodesCount; i++ {
-		nodeIndex := plan.RouteNodeIndexs[i]
-		nodes = append(nodes, c.proxy.GetNode(plan.Rule.Nodes[nodeIndex]))
+	nodes := []*backend.Node{
+		c.proxy.GetNode(c.user),
 	}
 	if c.isInTransaction() {
 		if 1 < len(nodes) {
@@ -417,7 +414,7 @@ func (c *ClientConn) GetExecNode(tokens []string,
 		if len(defaultRule.Nodes) == 0 {
 			return nil, false, errors.ErrNoDefaultNode
 		}
-		execNode = c.proxy.GetNode(defaultRule.Nodes[0])
+		execNode = c.proxy.GetNode(c.user)
 	}
 
 	return execNode, fromSlave, nil

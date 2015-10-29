@@ -37,9 +37,7 @@ func (c *ClientConn) handleFieldList(data []byte) error {
 		return mysql.NewDefaultError(mysql.ER_NO_DB_ERROR)
 	}
 
-	nodeName := c.schema.rule.GetRule(table).Nodes[0]
-
-	n := c.proxy.GetNode(nodeName)
+	n := c.proxy.GetNode(c.user)
 
 	co, err := n.GetMasterConn()
 	if err != nil {
